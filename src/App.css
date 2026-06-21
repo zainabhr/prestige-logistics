@@ -9,6 +9,8 @@ body{
   background-color: #F7F9FB;
 }
 
+/* ======================================= HEADER ======================================= */
+
 header{
   position: relative;
   width: 100%;
@@ -65,8 +67,9 @@ header input{
 header input::placeholder{
   font-size: 14px;
   color: #6b7280;
-
 }
+
+/* ======================================= SIDEBAR ======================================= */
 
 .sidebar {
   position: fixed;
@@ -98,7 +101,6 @@ header input::placeholder{
 }
 
 .sidebar li {
-  /* padding: 15px 0px; */
   margin: 0;
 }
 .sidebar a {
@@ -106,17 +108,21 @@ header input::placeholder{
   text-decoration: none;
   width: 100%;
   padding: 15px 20px;
-  color: #333;
+  color: #64748B;
+}
+
+.sidebar a.active{
+  background-color: #F8FAFC;
+  border-right: 3px solid #0F172A;
+  font-weight: 700;
+  color: #0F172A;
 }
 
 .sidebar li:hover{
-  background-color: #64748B;
+  background-color: #0F172A;
 }
 
-.sidebar a:active{
-  background-color: gray;
-  border-left: 2px solid #0F172A;
-}
+/* ======================================= GENERAL STYLES ======================================= */
 
 .home,
 .ads,
@@ -130,29 +136,24 @@ header input::placeholder{
   position: relative;
 }
 
-.home h2,
-.ads h2,
-.users h2,
-.restaurants h2,
-.drivers h2,
-.promo-codes h2{
+.section-title-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.section-title{
   color: #0F172A;
 }
 
-.home > p, 
-.ads > p,
-.users > p,
-.restaurants .rest-title p,
-.promo-codes .promo-title p
-{
+.section-topic{
   color: #76849F;
   font-size: 14px;
 }
 
-.home .activity-summary,
-.ads .activity-summary,
-.restaurants .activity-summary,
-.promo-codes .activity-summary{
+.activity-summary{
   display: grid;
   grid-template-columns: auto auto auto auto;
   /* grid-template-rows: 1fr 1fr; */
@@ -160,11 +161,7 @@ header input::placeholder{
   margin-block: 30px;
 }
 
-.home .activity-summary .box,
-.ads .activity-summary .box,
-.restaurants .activity-summary .box,
-.drivers .activity-summary .box,
-.promo-codes .activity-summary .box
+.activity-summary .box
 {
   width: 215px;
   height: 150px;
@@ -174,32 +171,62 @@ header input::placeholder{
   padding: 20px;
 }
 
+.activity-summary .box .text{
+  color: #64748B;
+  font-size: 14px;
+}
+
+.activity-summary .box .number{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33.6px;
+}
+
+.table-body{
+  width: 100%;
+  border-collapse: collapse;
+  /* border-radius: 30px; */
+}
+
+.table-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 25px;
+  color: #76849F;
+}
+
+.table-footer button{
+  width: 50px;
+  height: 25px;
+  margin: 0 5px;
+  border: 1px solid #E2E8F0;
+}
+
+.add-new-btn,
+.password-reset,
+.restaurants .table-header button{
+  width: 140px;
+  height: 40px;
+  background-color: #0D1C32;
+  color: #fff;
+  box-shadow: 0px 1px 2px black;
+  border: 1px solid #75777E;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+/* ======================================= HOME PAGE ======================================= */
+
 .home .activity-summary .box div,
 .drivers .activity-summary .box div{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.home .activity-summary .box .text,
-.ads .activity-summary .box .text,
-.drivers .activity-summary .box .text,
-.promo-codes .activity-summary .box .text{
-  color: #64748B;
-  font-size: 14px;
-}
-
-.home .activity-summary .box .number,
-.ads .activity-summary .box .number,
-.drivers .activity-summary .box .number,
-.promo-codes .activity-summary .box .number{
-  
-  /* color: #64748B; */
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 33.6px;
-}
-
 
 .home .activity-summary .box i{
   width: 30px;
@@ -229,6 +256,8 @@ header input::placeholder{
   background-color: #EEF2FF;
 }
 
+/* ======================================= ADS PAGE ======================================= */
+
 .ads .activity-summary .box .number{
   font-size: 46px;
   margin-block: 15px;
@@ -244,31 +273,23 @@ header input::placeholder{
   padding: 40px 25px;
 }
 
-.ads table,
-.users table, 
-.restaurants table, 
-.drivers table,
-.promo-codes table{
-  width: 100%;
-  border-collapse: collapse;
-  /* border-radius: 30px; */
-}
-
-.ads table th{
+.ads table th,
+.users table th,
+.restaurants table th{
   height: 45px;
   background-color: #F8FAFC80;
   color: #76849F;
+  text-align: right;
+  font-size: 16px;
 }
 
-
-/* .ads table tr{
-  height: 70px;
-} */
-
-.ads table td{
-  height: 70px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+.ads table td,
+.users table td,
+.restaurants table td{
+  height: 75px;
+  text-align: right;
+  border-bottom: 1px solid #F8FAFC;
+  color: #0F172A;
 }
 
 .ads table td img{
@@ -276,51 +297,21 @@ header input::placeholder{
   height: 40px;
 }
 
-.ads .ads-num,
-.users .users-num,
-.drivers .drivers-num,
-.promo-codes .promo-num{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 25px;
-  color: #76849F;
-}
-
-.ads .ads-num button,
-.users .users-num button,
-.drivers .drivers-num button,
-.promo-codes .promo-num button{
-  width: 50px;
-  height: 25px;
-  margin: 0 5px;
-  border: 1px solid #E2E8F0;
-}
 
 .ads .add-new-ad{
   width: 140px;
   height: 40px;
-  position: absolute;
   background-color: black;
   color: white;
   box-shadow: 0px 1px 2px black;
   border: 1px solid black;
   border-radius: 5px;
-  left: 30px;
 }
+
+/* ======================================= USERS PAGE ======================================= */
 
 .users .add-new-user{
   width: 170px;
-  height: 45px;
-  position: absolute;
-  background-color: #0D1C32;
-  color: white;
-  box-shadow: 0px 1px 2px black;
-  border: 1px solid black;
-  border-radius: 5px;
-  left: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
   font-weight: 700;
 }
 
@@ -378,23 +369,17 @@ header input::placeholder{
   border-radius: 10px;
 }
 
-
 .users table th{
-  height: 50px;
   color: #39475F;
-  background-color: #F8FAFC;
-  text-align: right;
   border-left: 1px solid #F8FAFC;
 }
 
-.users table td{
-  height: 75px;
-  color: #475569;
-  border-bottom: 1px solid #F8FAFC;
-}
 
-.users table td i{
-  font-size: 14px;
+.users table td i,
+.restaurants table td i,
+.drivers table td i,
+.promo-codes table td i{
+  font-size: 16px;
   margin: 0 5px;
   color: #94A3B8;
 }
@@ -420,51 +405,15 @@ header input::placeholder{
   
 }
 
-.restaurants .rest-title,
-.drivers .drivers-title,
-.promo-codes .promo-title{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 10px;
-  
-}
 
-.restaurants .rest-title .password-reset,
-.drivers .drivers-title .password-reset{
+/* ======================================= RESTAURANTS PAGE ======================================= */
+
+.restaurants  .password-reset,
+.drivers  .password-reset{
   width: 180px;
-  height: 40px;
   background-color: transparent;
   color: #44474D;
-  box-shadow: 0px 1px 2px black;
-  border: 1px solid #75777E;
-  border-radius: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
 }
-
-.restaurants .rest-title .add-new-rest,
-.drivers .drivers-title .add-new-driver,
-.promo-codes .promo-title .add-new-pro-code{
-  width: 140px;
-  height: 40px;
-  background-color: #0D1C32;
-  color: #fff;
-  box-shadow: 0px 1px 2px black;
-  border: 1px solid #75777E;
-  border-radius: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  margin-right: 10px;
-}
-
-.drivers .drivers-title .add-new-driver{
-  margin-left: 10px;
-}
-
 
 .restaurants .activity-summary{
   gap:15px;
@@ -473,10 +422,7 @@ header input::placeholder{
 .restaurants .activity-summary .box{
   width: 250px;
   height: 130px;
-  background-color: white;
-  border-radius: 10px;
   box-shadow: 0px 4px 10px #0a192f;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -544,11 +490,7 @@ header input::placeholder{
   height: 25px;
   background-color: transparent;
   color: #76849F;
-  border: 1px solid #75777E;
-  border-radius: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  margin: 0;
 }
 
 .restaurants .rest-list h3{
@@ -562,24 +504,16 @@ header input::placeholder{
 }
 
 .restaurants table th{
-  height: 50px;
   background-color: #F2F4F6;
-  font-size: 16px;
-  text-align: right;
   color: #44474D;
   padding: 10px;
 }
 
 .restaurants table td{
-  height: 75px;
-  color: #191C1E;
-  border-bottom: 1px solid #F8FAFC;
   padding: 10px;
 }
 
 .restaurants table td i{
-  font-size: 14px;
-  margin: 0 5px;
   color: #191C1E;
   }
 
@@ -614,11 +548,24 @@ header input::placeholder{
 }
 
 .restaurants .rest-details p{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.6px;
   margin-block: 15px;
+}
+
+.restaurants .rest-details button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #191C1E;
+  margin-bottom: 20px;
 }
 
 .restaurants .rest-details .btn-group1{
@@ -626,21 +573,15 @@ header input::placeholder{
   align-items: center;
   gap: 10px
 }
+
 .restaurants .rest-details .btn-group1 button{
-  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 200px;
   height: 70px;
   border: 1px solid #e0e3e0;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #191C1E;
   background-color: transparent;
-  margin-bottom: 20px;
 }
+
 
 .restaurants .rest-details hr{
   border: 1px solid #E0E3E5;
@@ -666,19 +607,13 @@ header input::placeholder{
   align-items: center;
   gap: 20px
 }
+
 .restaurants .rest-details .btn-group2 button{
-  display: flex;
-  align-items: center;
   justify-content: flex-start;
-  width: 200px;
   height: 40px;
   border: none;
-  border-radius: 5px;
   font-size: 11px;
-  font-weight: 700;
-  color: #191C1E;
   background-color: #F2F4F6;
-  margin-bottom: 20px;
   padding: 15px;
 }
 
@@ -720,6 +655,12 @@ header input::placeholder{
 
 .restaurants .rest-details img{
   width: 100%;
+}
+
+/* ======================================= DRIVERS PAGE ======================================= */
+
+.drivers .add-new-btn{
+  margin-left: 10px;
 }
 
 .drivers .activity-summary .box i{
@@ -789,29 +730,26 @@ header input::placeholder{
   margin-left: 15px;
 }
 
-.drivers .current-driver-div .new-request{
+.drivers .current-driver-div button{
   height: 30px;
-  width: 115px;
-  background-color: #FFF;
-  color: #0D1C32;
-  border: none;
   border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
   margin-left: 16px;
   margin-top: 35px;
 }
+
+.drivers .current-driver-div .new-request{
+  width: 115px;
+  background-color: #FFF;
+  color: #0D1C32;
+  border: none;
+}
 .drivers .current-driver-div .skip{
-  height: 30px;
   width: 95px;
   background-color: transparent;
   color: #fff;
   border: 1px solid #FFFFFF4D;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-left: 16px;
-  margin-top: 35px;
 }
 
 .drivers .reports{
@@ -916,12 +854,7 @@ header input::placeholder{
   padding: 20px;
 }
 
-.drivers table td i,
-.promo-codes table td i{
-  color: #94A3B8;
-  font-size: 16px;
-  margin: 0 6px;
-}
+/* ======================================= PROMO CODE PAGE ======================================= */
 
 .promo-codes .activity-summary{
   gap: 15px;

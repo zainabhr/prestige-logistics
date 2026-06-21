@@ -1,8 +1,8 @@
 function Home(){
     return(
         <section className="home">
-            <h2>نظرة عامة على العمليات</h2>
-            <p>أهلاً بك مجدداً إليك ملخص نشاط Pristige Logistics لليوم</p>
+            <h2 className="section-title">نظرة عامة على العمليات</h2>
+            <p className="section-topic">أهلاً بك مجدداً إليك ملخص نشاط Pristige Logistics لليوم</p>
             <div className="activity-summary">
                 <div className="box">
                     <div>

@@ -3,13 +3,13 @@ import driverImg from '../assets/driver img.jpg'
 function Drivers(){
     return(
         <section className="drivers">
-            <div className="drivers-title">
+            <div className="section-title-box">
                 <div>
-                    <h2> إدارة السائقين </h2>
-                    <p>نظرة عامة على حالة الأسطول وإدارة العمليات اليومية</p>
+                    <h2 className="section-title"> إدارة السائقين </h2>
+                    <p className="section-topic">نظرة عامة على حالة الأسطول وإدارة العمليات اليومية</p>
                 </div>
                 <div>
-                    <button className="add-new-driver"> <i className="add-user-icon fas fa-user-plus"></i>  إنشاء حساب سائق </button>
+                    <button className="add-new-btn"> <i className="add-user-icon fas fa-user-plus"></i>  إنشاء حساب سائق </button>
                     <button className="password-reset">  إعادة تعيين كلمة المرور </button>
                 </div>
             </div>
@@ -104,7 +104,7 @@ function Drivers(){
                         </label>
                     </div>
                 </div>
-                <table>
+                <table className='table-body'>
                         <tr>
                             <th>اسم السائق</th>
                             <th>رقم الهاتف</th>
@@ -163,7 +163,7 @@ function Drivers(){
                             </td>
                         </tr>
                 </table>
-                <div className="drivers-num">
+                <div className="table-footer">
                     <span>عرض 4 من أصل 1284 سائق </span>
                     <span>
                         <button>السابق</button>

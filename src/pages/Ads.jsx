@@ -4,9 +4,14 @@ import weekOfferImg from '../assets/week offer img.jpg'
 function Ads(){
     return(
         <section className="ads">
-            <button className="add-new-ad">أضف إعلان جديد</button>
-            <h2>إدارة الإعلانات</h2>
-            <p>تتبع وتحكم في جميع الحملات الإعلانية النشطة والمجدولة</p>
+            <div className="section-title-box">
+                <div>
+                    <h2 className="section-title">إدارة الإعلانات</h2>
+                    <p className="section-topic">تتبع وتحكم في جميع الحملات الإعلانية النشطة والمجدولة</p>
+                </div>
+                <button className="add-new-btn">أضف إعلان جديد</button>
+
+            </div>
             <div className="activity-summary">
                 <div className="box">
                     <p className="text">إجمالي الإعلانات</p>
@@ -31,7 +36,7 @@ function Ads(){
             </div>
             <div className="ads-list">
                 <h3>قائمة الإعلانات</h3>
-                <table>
+                <table className='table-body'>
                     <tr>
                         <th>الصورة</th>
                         <th>العنوان</th>
@@ -61,7 +66,7 @@ function Ads(){
                         <td>Inactive</td>
                     </tr>
                 </table>
-                <div className="ads-num">
+                <div className="table-footer">
                     <span>عرض 2 من أصل 20</span>
                     <span>
                         <button>السابق</button>

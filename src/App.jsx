@@ -15,7 +15,7 @@ function App() {
   
   return (
   <>
-    <BrowserRouter>
+    <BrowserRouter basename="/prestige-logistics">
     <Header />
     <Sidebar />
       <Routes>

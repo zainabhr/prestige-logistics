@@ -6,9 +6,14 @@ import profileImg4 from '../assets/profile img 4.jpg'
 function Users(){
     return(
         <section className="users">
-            <button className="add-new-user"><i class="add-user-icon fas fa-user-plus"></i>  إضافة مستخدم جديد</button>
-            <h2>إدارة المستخدمين</h2>
-            <p>إجمالي المستخدمين المسجلين: <span style={{fontWeight:'bold',color: '#000'}}>1,284 مستخدم</span></p>
+            <div className="section-title-box">
+                <div>
+                    <h2 className="section-title">إدارة المستخدمين</h2>
+                    <p className="section-topic">إجمالي المستخدمين المسجلين: <span style={{fontWeight:'bold',color: '#000'}}>1,284 مستخدم</span></p>
+                </div>
+                <button className="add-new-btn"><i class="add-user-icon fas fa-user-plus"></i>  إضافة مستخدم جديد</button>
+
+            </div>
             <form action="">
                 <div>
                     <label htmlFor="username">البحث عن مستخدم</label>
@@ -35,7 +40,7 @@ function Users(){
                 <button className="filter-btn">تصفية النتائج</button>
             </form>
             <div className="users-list">
-                <table>
+                <table className='table-body'>
                     <tr>
                         <th>الاسم</th>
                         <th>الهاتف</th>
@@ -130,7 +135,7 @@ function Users(){
                         </td>
                     </tr>
                 </table>
-                <div className="users-num">
+                <div className="table-footer">
                     <span>عرض 4 من أصل 1284 مستخدم </span>
                     <span>
                         <button>السابق</button>

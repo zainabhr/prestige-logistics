@@ -1,12 +1,12 @@
 function PromoCodes(){
     return(
         <section className="promo-codes">
-            <div className="promo-title">
+            <div className="section-title-box">
                 <div>
-                    <h2> إدارة أكواد الخصم </h2>
-                    <p> إدارة وتتبع فعالية الحملات الترويجية وقسائم الشراء </p>
+                    <h2 className="section-title"> إدارة أكواد الخصم </h2>
+                    <p className="section-topic"> إدارة وتتبع فعالية الحملات الترويجية وقسائم الشراء </p>
                 </div>
-                <button className="add-new-pro-code"> إضافة كود جديد + </button>
+                <button className="add-new-btn"> إضافة كود جديد + </button>
 
             </div>
             <div className="activity-summary">
@@ -35,7 +35,7 @@ function PromoCodes(){
                             <i className="fas fa-download"></i>
                         </div>
                     </div>
-                    <table>
+                    <table className='table-body'>
                             <tr>
                                 <th>الكود</th>
                                 <th>نسبة الخصم</th>
@@ -83,7 +83,7 @@ function PromoCodes(){
                                 </td>
                             </tr>
                     </table>
-                    <div className="promo-num">
+                    <div className="table-footer">
                         <span>عرض 3 من أصل 124 كود </span>
                         <span>
                             <button>السابق</button>
@@ -93,6 +93,27 @@ function PromoCodes(){
                             <button>التالي</button>
                         </span>
                     </div>
+            </div>
+            <div className="promo-analysis">
+                <div className="analysis">
+                    <p className="tit"></p>
+                    <p></p>
+                    <button></button>
+                </div>
+                <div className="promo-advice">
+                    <div>
+                        <i></i>
+                    </div>
+                    <div>
+                        <p className="title"></p>
+                        <p></p>
+                    </div>
+                    <div className="img-container">
+                        <img src="" alt="" />
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
             </div>
         </section>
     )

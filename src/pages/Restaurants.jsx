@@ -3,14 +3,14 @@ import resImg from '../assets/Promo.png'
 function Restaurants(){
     return(
         <section className="restaurants">
-            <div className="rest-title">
+            <div className="section-title-box">
                 <div>
-                    <h2>إدارة المطاعم </h2>
-                    <p>نظرة عامة و التحكم في شركات الطعام والخدمات اللوجستية</p>
+                    <h2 className="section-title">إدارة المطاعم </h2>
+                    <p className="section-topic">نظرة عامة و التحكم في شركات الطعام والخدمات اللوجستية</p>
                 </div>
                 <div>
                     <button className="password-reset">  إعادة تعيين كلمة المرور </button>
-                    <button className="add-new-rest">  + إضافة مطعم</button>
+                    <button className="add-new-btn">  + إضافة مطعم</button>
                 </div>
             </div>
             <div className="activity-summary">
@@ -57,7 +57,7 @@ function Restaurants(){
                         <h3>قائمة المطاعم المشتركة</h3>
                         <button>تنزيل التقرير</button>
                     </div>
-                    <table>
+                    <table className='table-body'>
                         <tr>
                             <th>اسم المطعم</th>
                             <th>المدينة</th>
