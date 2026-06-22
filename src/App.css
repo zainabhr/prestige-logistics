@@ -9,6 +9,30 @@ body{
   background-color: #F7F9FB;
 }
 
+/* ======================================= ANIMATIONS ======================================= */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform:  translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform:  translateY(0);
+  }
+}
+
 /* ======================================= HEADER ======================================= */
 
 header{
@@ -131,6 +155,7 @@ header input::placeholder{
 .drivers,
 .promo-codes{
   /* width: 100%; */
+  animation: slideRight 1s ease  forwards;
   margin-right: 300px;
   margin-top: 30px;
   position: relative;
@@ -878,3 +903,91 @@ header input::placeholder{
   color: #94A3B8;
   margin-left: 10px;
 }
+
+.promo-codes .promo-analysis{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 15px 0;
+}
+
+.promo-codes .analysis{
+  width: 50%;
+  height: 250px;
+  padding: 25px;
+  background-image: url(../src/assets/promo-code-image.png);
+  background-size: cover;
+  color: #E2E8F0;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.promo-codes  p.title{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 60px;
+  color:#fff;
+}
+
+.promo-codes .analysis button{
+  width: 110px;
+  height: 40px;
+  color: white;
+  border: 1px solid #FFFFFF33;
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px #ffffff20; 
+  font-family: sans-serif;
+  cursor: pointer;
+  background: #FFFFFF1A;
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+  margin-top: 15px;
+}
+
+.promo-codes .promo-advice{
+  height: 300px;
+  background-color: #fff;
+  padding: 25px;
+  box-shadow: 4px 0px 32px 0px #0A192F0F;
+  border: 1px solid #f1f5f9;
+  color: #475569;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.promo-codes .promo-advice .icon{
+  width: 50px;
+  height: 50px;
+  background: #77592E1A;
+  color: #77592E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.promo-codes .promo-advice p.title{
+  color: #0A192F;
+  margin-top: 15px;
+}
+
+.promo-codes .promo-advice .img-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.promo-codes .promo-advice .img-container img{
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  margin-left: 10px;
+
+}
+
+
+

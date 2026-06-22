@@ -1,3 +1,5 @@
+import profileImg from '../assets/promo-profile-image.jpg'
+
 function PromoCodes(){
     return(
         <section className="promo-codes">
@@ -96,22 +98,25 @@ function PromoCodes(){
             </div>
             <div className="promo-analysis">
                 <div className="analysis">
-                    <p className="tit"></p>
-                    <p></p>
-                    <button></button>
+                    <p className="title">تحليل أداء الحملات</p>
+                    <p>اكتشف أي الأكواد تحقق أعلى نسبة مبيعات وأفضل وصول للعملاء</p>
+                    <button>مشاهدة التقرير</button>
                 </div>
                 <div className="promo-advice">
-                    <div>
-                        <i></i>
+                    <div className='icon'>
+                        <i className="fa-solid fa-star"></i>
                     </div>
                     <div>
-                        <p className="title"></p>
-                        <p></p>
+                        <p className="title">نصيحة خبير</p>
+                        <p>"تفعيل الأكواد لفترات محدودة (Flash Sales) يرفع معدل التحويل بنسبة تصل
+                            إلى 40% مقارنة بالأكواد الدائمة."</p>
                     </div>
                     <div className="img-container">
-                        <img src="" alt="" />
-                        <h3></h3>
-                        <p></p>
+                        <img src={profileImg} alt="profile img" />
+                        <div>
+                            <h3>أحمد سامي</h3>
+                            <p>مستشار تسوق لوجيستي</p>
+                        </div>
                     </div>
                 </div>
             </div>
