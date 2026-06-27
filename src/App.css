@@ -153,6 +153,7 @@ header input::placeholder{
 .users,
 .restaurants,
 .drivers,
+.orders,
 .promo-codes{
   /* width: 100%; */
   animation: slideRight 1s ease  forwards;
@@ -219,6 +220,7 @@ header input::placeholder{
   justify-content: space-between;
   padding: 30px 25px;
   color: #76849F;
+  font-size: 12px;
 }
 
 .table-footer button{
@@ -230,7 +232,9 @@ header input::placeholder{
 
 .add-new-btn,
 .password-reset,
-.restaurants .table-header button{
+.restaurants .table-header button,
+.report-btn,
+.orders .filter-btn{
   width: 140px;
   height: 40px;
   background-color: #0D1C32;
@@ -247,18 +251,22 @@ header input::placeholder{
 /* ======================================= HOME PAGE ======================================= */
 
 .home .activity-summary .box div,
-.drivers .activity-summary .box div{
+.drivers .activity-summary .box div,
+.orders .activity-summary .box div{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.home .activity-summary .box i{
-  width: 30px;
-  height: 30px;
+.home .activity-summary .box i,
+.orders .activity-summary .box i{
+  width: 35px;
+  height: 35px;
   font-size: 26px;
-  margin: 0 0 15px 15px;
   text-align: center;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .home .box .user-i{
@@ -300,7 +308,8 @@ header input::placeholder{
 
 .ads table th,
 .users table th,
-.restaurants table th{
+.restaurants table th,
+.orders table th{
   height: 45px;
   background-color: #F8FAFC80;
   color: #76849F;
@@ -310,7 +319,8 @@ header input::placeholder{
 
 .ads table td,
 .users table td,
-.restaurants table td{
+.restaurants table td,
+.orders table td{
   height: 75px;
   text-align: right;
   border-bottom: 1px solid #F8FAFC;
@@ -403,7 +413,8 @@ header input::placeholder{
 .users table td i,
 .restaurants table td i,
 .drivers table td i,
-.promo-codes table td i{
+.promo-codes table td i,
+.orders table td i{
   font-size: 16px;
   margin: 0 5px;
   color: #94A3B8;
@@ -434,7 +445,8 @@ header input::placeholder{
 /* ======================================= RESTAURANTS PAGE ======================================= */
 
 .restaurants  .password-reset,
-.drivers  .password-reset{
+.drivers  .password-reset,
+.orders .filter-btn{
   width: 180px;
   background-color: transparent;
   color: #44474D;
@@ -471,7 +483,8 @@ header input::placeholder{
 
 
 
-.restaurants .activity-summary .box i{
+.restaurants .activity-summary .box i,
+.orders .order-details .img-container i{
   width: 45px;
   height: 45px;
   font-size: 28px;
@@ -490,11 +503,12 @@ header input::placeholder{
   font-weight: 600;
 }
 
-.restaurants .rest-list{
+.restaurants .rest-list,
+.orders .orders-list{
   background-color: #fff;
   position: relative;
   width: 100%;
-  padding: 25px;
+  padding: 20px 25px;
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -661,7 +675,8 @@ header input::placeholder{
   margin-bottom: 16px;
 }
 
-.restaurants .rest-details form button{
+.restaurants .rest-details form button,
+.orders .order-details .update-btn{
   height: 40px;
   width: 100%;
   background-color: #0D1C32;
@@ -683,6 +698,10 @@ header input::placeholder{
 }
 
 /* ======================================= DRIVERS PAGE ======================================= */
+
+.drivers .activity-summary .box div{
+  margin-bottom: 0;
+}
 
 .drivers .add-new-btn{
   margin-left: 10px;
@@ -821,6 +840,21 @@ header input::placeholder{
 
 .drivers .table-box label{
   margin-right: 5px;
+}
+
+.drivers .table-box td span,
+.orders .table-body td span{
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #F1F5F9;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 12px;
+  color:#475569;
 }
 
 .drivers .filter-bar,
@@ -974,7 +1008,9 @@ header input::placeholder{
   margin-top: 15px;
 }
 
-.promo-codes .promo-advice .img-container{
+.promo-codes .promo-advice .img-container,
+.orders table td.img-container,
+.orders .order-details .img-container{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -990,4 +1026,231 @@ header input::placeholder{
 }
 
 
+/* ======================================= ORDER PAGE ======================================= */
 
+.orders .activity-summary{
+  gap: 15px;
+}
+
+.orders .activity-summary .box{
+  width: 240px;
+}
+
+.orders .orders-list{
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+}
+
+.orders h3{
+  margin-bottom: 20px;
+  color: #1E293B;
+  font-size: 16px;
+}
+
+.orders table th{
+  color: #64748B;
+  font-size: 12px;
+}
+
+.orders table td .order-num{
+  font-weight: 700;
+  font-size: 16px;
+  color: #0A192F;
+}
+
+.orders table td .order-date{
+  font-weight: 400;
+  font-size: 10px;
+  color: #94A3B8;
+}
+
+.orders table td.img-container{
+  margin-top: 0;
+}
+
+.orders table td.img-container .client-name{
+  color: #334155;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.orders table td.img-container .client-number{
+  color: #94A3B8;
+  font-weight: 400;
+  font-size: 10px;
+}
+.orders table td .rest-driver-name{
+  font-size: 12px;
+  color:#475569;
+  /* text-align: center; */
+}
+
+.orders table td.cost{
+  font-weight: 700;
+  font-size: 16px;
+  color: #334155;
+}
+
+.orders .order-details{
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  background-color: #0A192F05;
+}
+
+.orders .order-details .header{
+  background: #0A192F;
+  padding: 25px;
+  border-radius: 10px 10px 0 0 ;
+}
+
+.orders .order-details .header div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orders .order-details .header div > p{
+  border-radius: 12px;
+  padding: 4px 8px;
+  background-color: #3B82F633;
+  color: #BFDBFE;
+  font-size: 10px;
+}
+
+.orders .order-details .header div{
+  font-size: 12px;
+  color: #fff;
+}
+
+.orders .order-details .header > h3{
+  font-weight: 900;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.orders .order-details .header > p{
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(176, 176, 176);
+}
+
+
+
+.orders .order-details .status-section{
+  padding: 25px;
+  background: #f9f9f9;
+}
+
+.orders .order-details .status-section > p{
+  font-size: 12px;
+  font-weight: 700;
+  color: #94A3B8;
+  margin-bottom: 15px;
+  letter-spacing: 1.2px;
+}
+
+.orders .order-details .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.orders .order-details .dot.green { 
+  background-color: #10B981; 
+}
+.orders .order-details .dot.blue { 
+  background-color: #3B82F6; 
+}
+
+.orders .order-details .dot.gray { 
+  background-color: #CBD5E1; 
+}
+
+.orders .order-details hr{
+  width: 90%;
+  height: 1;
+  margin: 0 5%;
+  border: 1px solid #F1F5F9;
+}
+
+.orders .order-details .img-container{
+  margin-top: 0px;
+  margin-bottom: 25px;
+  gap: 12px
+
+}
+
+.orders .order-details .img-container .status,
+.orders .order-details .img-container .name{
+  color: #334155;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.orders .order-details .img-container .time,
+.orders .order-details .img-container .label{
+  color: #94A3B8;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.orders .order-details .img-container i{
+  background-color: #F8FAFC;
+  color: #94a3bb;
+}
+
+.orders .order-details .meals-list{
+  padding: 25px;
+  background: #F8FAFC;
+}
+
+.orders .order-details .meals-list > p,
+.orders .order-details .meals-list .label{
+  font-weight: 700;
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+.orders .order-details .delivery{
+  padding-top: 20px;
+  background: #F8FAFC;
+}
+
+.orders .order-details .meal-row,
+.orders .order-details .delivery-row,
+.orders .order-details .total-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.orders .order-details .meal-name{
+  font-weight: 500;
+  font-size: 14px;
+  color: #475569;
+
+}
+
+.orders .order-details .meal-price{
+  font-weight: 700;
+  font-size: 14px;
+  color: #0F172A;
+}
+
+
+.orders .order-details .total-row span{
+  font-weight: 700;
+  font-size: 16px;
+  color: #0A192F;
+}
+.orders .order-details .total-row span.total-price{
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.orders .order-details .update-btn{
+  margin-top: 15px;
+
+}

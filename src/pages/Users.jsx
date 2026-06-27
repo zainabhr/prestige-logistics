@@ -11,7 +11,7 @@ function Users(){
                     <h2 className="section-title">إدارة المستخدمين</h2>
                     <p className="section-topic">إجمالي المستخدمين المسجلين: <span style={{fontWeight:'bold',color: '#000'}}>1,284 مستخدم</span></p>
                 </div>
-                <button className="add-new-btn"><i class="add-user-icon fas fa-user-plus"></i>  إضافة مستخدم جديد</button>
+                <button className="add-new-btn"><i className="add-user-icon fas fa-user-plus"></i>  إضافة مستخدم جديد</button>
 
             </div>
             <form action="">
@@ -66,9 +66,9 @@ function Users(){
                         <td>نشط</td>
                         <td>15 / 5 / 2023</td>
                         <td>
-                            <i class="fas fa-pen"></i>      
-                            <i class="fas fa-ban"></i>      
-                            <i class="fas fa-eye"></i>  
+                            <i className="fas fa-pen"></i>      
+                            <i className="fas fa-ban"></i>      
+                            <i className="fas fa-eye"></i>  
                         </td>
                     </tr>
                     <tr>
@@ -87,9 +87,9 @@ function Users(){
                         <td>معطل</td>
                         <td>28 / 5 / 2023</td>
                         <td>
-                            <i class="fas fa-pen"></i>      
-                            <i class="fas fa-ban"></i>      
-                            <i class="fas fa-eye"></i>  
+                            <i className="fas fa-pen"></i>      
+                            <i className="fas fa-ban"></i>      
+                            <i className="fas fa-eye"></i>  
                         </td>
                     </tr>
                     <tr>
@@ -108,9 +108,9 @@ function Users(){
                         <td>نشط</td>
                         <td>5 / 10 / 2023</td>
                         <td>
-                            <i class="fas fa-pen"></i>      
-                            <i class="fas fa-ban"></i>      
-                            <i class="fas fa-eye"></i>  
+                            <i className="fas fa-pen"></i>      
+                            <i className="fas fa-ban"></i>      
+                            <i className="fas fa-eye"></i>  
                         </td>
                     </tr>
                     <tr>
@@ -129,9 +129,9 @@ function Users(){
                         <td>نشط</td>
                         <td>18 / 12 / 2023</td>
                         <td>
-                            <i class="fas fa-pen"></i>      
-                            <i class="fas fa-ban"></i>      
-                            <i class="fas fa-eye"></i>  
+                            <i className="fas fa-pen"></i>      
+                            <i className="fas fa-ban"></i>      
+                            <i className="fas fa-eye"></i>  
                         </td>
                     </tr>
                 </table>
