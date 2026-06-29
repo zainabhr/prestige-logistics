@@ -234,7 +234,9 @@ header input::placeholder{
 .password-reset,
 .restaurants .table-header button,
 .report-btn,
-.orders .filter-btn{
+.orders .filter-btn,
+.home .special-drivers-box button,
+.home .bar-chart .header button{
   width: 140px;
   height: 40px;
   background-color: #0D1C32;
@@ -289,6 +291,178 @@ header input::placeholder{
   background-color: #EEF2FF;
 }
 
+.restaurants .rest-list,
+.orders .orders-list,
+.home .charts-box,
+.home .tables-box{
+  background-color: #F7F9FB;;
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.home .charts-box .pie-chart,
+.home .charts-box .bar-chart{
+  box-shadow: 0px 1px 2px 0px #0000000D;
+  border: 1px solid #F1F5F9;
+  background: #FFFFFF;
+  /* width: 896;
+  height: 437; */
+  border-radius: 8px;
+  padding: 32px;
+}
+
+
+.home .charts-box .pie-chart .colors-code div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .dot { 
+  margin-left: 5px;
+}
+
+.home .dot.red { 
+  background-color: #F87171; 
+}
+
+.home .bar-chart .header button{
+  width: 55px;
+}
+
+.home .bar-chart .header button.weekly{
+  background-color: #F8FAFC;
+  color: #475569;
+}
+
+.restaurants .rest-list  .table-header,
+.home .tables-box .header,
+.home .bar-chart .header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  background-color: #FFFFFF;
+  padding: 24px;
+  border-radius: 10px 10px 0 0;
+}
+
+
+
+.home .tables-box .header a{
+  text-decoration: none;
+  color: #2563EB;
+  font-size: 12px;
+}
+
+.ads table th,
+.users table th,
+.restaurants table th,
+.orders table th,
+.home table th{
+  height: 45px;
+  background-color: #F8FAFC80;
+  color: #64748B;
+  text-align: right;
+  font-size: 12px;
+  padding-right: 24px;
+}
+
+.ads table td,
+.users table td,
+.restaurants table td,
+.orders table td,
+.home table td{
+  height: 75px;
+  text-align: right;
+  border-bottom: 1px solid #F8FAFC;
+  color: #475569;
+  background-color: #fff;
+  padding-right: 24px;
+}
+
+.home table td.order-num{
+  color: #0F172A;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.home table td.cost{
+  color: #0F172A;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.home .special-drivers-box .driver-box{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.home .special-drivers{
+  padding: 24px;
+  background-color: #fff;
+}
+
+.home .special-drivers-box .img-container{
+  display: flex;
+  align-items: center;
+}
+
+.home .special-drivers-box .img-container img{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  margin-left: 10px ;
+}
+
+.home .special-drivers-box .img-container p{
+  color: #64748B;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.home .special-drivers-box .img-container p.name{
+  color: #0F172A;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+}
+
+.home .special-drivers-box .driver-box .income{
+  color: #2563EB;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 12px;
+}
+.home .special-drivers-box .driver-box .text{
+  color: #94A3B8;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.home .special-drivers-box button{
+  width: 100%;
+  height: 45px;
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid #F1F5F9;
+  color: #475569;
+  font-weight: 700;
+  margin-right: 0px;
+  margin-top: 24px;
+}
+
+
+
 /* ======================================= ADS PAGE ======================================= */
 
 .ads .activity-summary .box .number{
@@ -310,10 +484,7 @@ header input::placeholder{
 .users table th,
 .restaurants table th,
 .orders table th{
-  height: 45px;
-  background-color: #F8FAFC80;
   color: #76849F;
-  text-align: right;
   font-size: 16px;
 }
 
@@ -321,8 +492,6 @@ header input::placeholder{
 .users table td,
 .restaurants table td,
 .orders table td{
-  height: 75px;
-  text-align: right;
   border-bottom: 1px solid #F8FAFC;
   color: #0F172A;
 }
@@ -481,8 +650,6 @@ header input::placeholder{
   border-bottom: 2px solid #CBD5E1;
 }
 
-
-
 .restaurants .activity-summary .box i,
 .orders .order-details .img-container i{
   width: 45px;
@@ -495,34 +662,23 @@ header input::placeholder{
 
 .restaurants .activity-summary .box p.text{
   color: #44474D;
+  font-weight: 700;
   font-size: 12px;
+  letter-spacing: 0.6px;
 }
+
+.restaurants .activity-summary .box span{
+  color: #44474D;
+  font-size: 10px;
+}
+
 .restaurants .activity-summary .box p.number{
   color: #191C1E;
   font-size: 24px;
   font-weight: 600;
 }
 
-.restaurants .rest-list,
-.orders .orders-list{
-  background-color: #fff;
-  position: relative;
-  width: 100%;
-  padding: 20px 25px;
-  border-radius: 5px;
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 30px;
-}
 
-
-.restaurants .rest-list  .table-header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 10px;
-}
 
 .restaurants .table-header button{
   width: 70px;
@@ -533,7 +689,6 @@ header input::placeholder{
 }
 
 .restaurants .rest-list h3{
-  margin-block: 25px;
   color: #0D1C32;
 }
 
@@ -550,6 +705,7 @@ header input::placeholder{
 
 .restaurants table td{
   padding: 10px;
+  background-color: #FFFFFF;
 }
 
 .restaurants table td i{
@@ -572,7 +728,7 @@ header input::placeholder{
 }
 
 .restaurants .rest-details{
-  background-color: #0A192F05;
+  background-color: #fff;
   padding: 20px;
   border-radius: 5px;
 }
@@ -1041,15 +1197,28 @@ header input::placeholder{
   gap: 30px;
 }
 
+.orders .header{
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px 10px 0 0;
+}
+
 .orders h3{
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: #1E293B;
   font-size: 16px;
 }
 
 .orders table th{
+  background-color: #F8FAFC80;
   color: #64748B;
   font-size: 12px;
+  padding-right: 25px;
+}
+
+.orders table td {
+  padding-right: 25px;
+  background-color: #fff;
 }
 
 .orders table td .order-num{
@@ -1092,7 +1261,7 @@ header input::placeholder{
 }
 
 .orders .order-details{
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px #0000001a;
   border-radius: 5px;
   background-color: #0A192F05;
 }
@@ -1132,7 +1301,7 @@ header input::placeholder{
 .orders .order-details .header > p{
   font-weight: 400;
   font-size: 12px;
-  color: rgb(176, 176, 176);
+  color: #b0b0b0;
 }
 
 
@@ -1150,16 +1319,19 @@ header input::placeholder{
   letter-spacing: 1.2px;
 }
 
-.orders .order-details .dot {
+.orders .order-details .dot,
+.home .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   display: inline-block;
 }
-.orders .order-details .dot.green { 
+.orders .order-details .dot.green,
+.home .dot.green { 
   background-color: #10B981; 
 }
-.orders .order-details .dot.blue { 
+.orders .order-details .dot.blue,
+.home .dot.blue { 
   background-color: #3B82F6; 
 }
 

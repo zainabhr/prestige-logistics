@@ -27,7 +27,7 @@ function Restaurants(){
                     <div>
                         <p className="text">المطاعم النشطة</p>
                         <p className="number">942</p>
-                        <span style={{color: '#16A34A'}}>+12% من الإجمالي</span>
+                        <span >+12% من الإجمالي</span>
                     </div>
                             <i className="fas fa-check-circle"
                             style={{color:'#16A34A',backgroundColor: '#F0FDF4'}}></i>
@@ -45,7 +45,7 @@ function Restaurants(){
                     <div>
                         <p className="text">الطلبات الشهرية</p>
                         <p className="number">142800</p>
-                        <span style={{color: '#16A34A'}}>إجمالي مبيعات المنطقة</span>
+                        <span >إجمالي مبيعات المنطقة</span>
                     </div>
                     <i className="fas fa-calendar-alt" 
                     style={{color:'#44474D',backgroundColor: '#E6E8EA'}}></i>
@@ -88,11 +88,13 @@ function Restaurants(){
                             </td>
                         </tr>
                         <tr>
-                            <td><span>AR</span> أروما كافيه </td>
+                            <td style={{ borderBottomRightRadius: '10px'}}>
+                                <span>AR</span> أروما كافيه 
+                            </td>
                             <td>الدمام</td>
                             <td>10%</td>
                             <td>غير نشط</td>
-                            <td>
+                            <td style={{ borderBottomLeftRadius: '10px'}}>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      
                                 <i className="fas fa-cog"></i>      

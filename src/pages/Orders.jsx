@@ -50,7 +50,9 @@ function Orders(){
             </div>
             <div className="orders-list">
                 <div className="first-col">
-                    <h3>قائمة المطاعم المشتركة</h3>
+                    <div className="header">
+                        <h3>قائمة المطاعم المشتركة</h3>
+                    </div>
                     <table className='table-body'>
                         <tr>
                             <th>رقم الطلب</th>
@@ -122,7 +124,7 @@ function Orders(){
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style={{ borderBottomRightRadius: '10px'}}>
                                 <p dir="ltr"  className="order-num">#ORD-9018</p>
                                 <p className="order-date">26 / 1 / 2022</p>
                             </td>
@@ -145,7 +147,7 @@ function Orders(){
                             </td>
                             <td dir="ltr"  className="cost">380.00 SAR</td>
                             <td> مكتمل </td>
-                            <td>
+                            <td style={{ borderBottomLeftRadius: '10px'}}>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      
                                 <i className="fas fa-cog"></i>      
