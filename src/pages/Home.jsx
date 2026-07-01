@@ -17,12 +17,7 @@ function Home(){
         { name: 'اليوم', value1: 30, value2: 30 },      
         { name: 'اليوم', value1: 10, value2: 30 },   
     ];
-    // const chartData = 
-    // [
-    //     { name: 'في الوقت المحدد', value: 75, color: '#3b82f6' }, 
-    //     { name: 'تسليم مبكر', value: 15, color: '#10b981' },     
-    //     { name: 'متأخر', value: 10, color: '#ef4444' },          
-    // ];
+
     return(
         <section className="home">
             <h2 className="section-title">نظرة عامة على العمليات</h2>
@@ -97,30 +92,14 @@ function Home(){
                     </div>
                     <div >
                         <ResponsiveContainer width="100%" height={250}>
-                            <BarChart
-                            data={dummyData}
-                            margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
-                            >
-                            <XAxis 
-                                dataKey="name" 
-                                axisLine={false} 
-                                tickLine={false} 
-                                tick={{ fill: '#8884d8', fontSize: 11, fontWeight: 500 }} 
-                                dy={10}
-                            />
-                                <Bar 
-                                    dataKey="value1" 
-                                    fill="#2563eb"  
-                                
-                                    barSize={50}
-                                    stackId="a"
-                                />
-                            <Bar 
-                                dataKey="value2" 
-                                fill="#dbeafe" 
-                                barSize={50}   
-                                stackId="a"      
-                            />
+                            <BarChart data={dummyData} >
+                                <XAxis dataKey='name' />
+                                <Bar dataKey='value1'
+                                fill="#2563eb"
+                                stackId='1' />
+                                <Bar dataKey='value2'
+                                fill='#dbeafe'
+                                stackId='1' />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
