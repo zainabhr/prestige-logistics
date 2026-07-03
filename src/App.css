@@ -236,7 +236,9 @@ header input::placeholder{
 .report-btn,
 .orders .filter-btn,
 .home .special-drivers-box button,
-.home .bar-chart .header button{
+.home .bar-chart .header button,
+.login .right-side .header button,
+.login .right-side form  .submit-btn{
   width: 140px;
   height: 40px;
   background-color: #0D1C32;
@@ -1304,8 +1306,6 @@ header input::placeholder{
   color: #b0b0b0;
 }
 
-
-
 .orders .order-details .status-section{
   padding: 25px;
   background: #f9f9f9;
@@ -1411,7 +1411,6 @@ header input::placeholder{
   color: #0F172A;
 }
 
-
 .orders .order-details .total-row span{
   font-weight: 700;
   font-size: 16px;
@@ -1424,5 +1423,191 @@ header input::placeholder{
 
 .orders .order-details .update-btn{
   margin-top: 15px;
-
 }
+
+/* ======================================= ORDER PAGE ======================================= */
+.login{
+  display: grid;
+  grid-template-columns: 1fr 560px;
+}
+
+.login .left-side{
+  background-color: #0D1C32;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .left-side h2{
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 16px;
+}
+
+.login .left-side p{
+  color: #76849F;
+  font-size: 14px;
+  width: 310px;
+  text-align: center;
+}
+
+.login .left-side .img-holder{
+  background: #FFFFFF0D;
+  border-radius: 10px;
+}
+
+.login .left-side img{
+  width: 300px;
+  height: 300px;  
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.login .right-side .header{
+  height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.login .right-side .header a{
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: #44474D;
+}
+
+.login .right-side .header button{
+  width: 140px;
+  height: 40px;
+  color: #0D1C32;
+  background-color: transparent;
+  border: none;
+}
+
+.login .right-side .container{
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .right-side .login-box{
+  width: 325px;
+}
+
+.login .right-side h1{
+  font-weight: 400;
+  font-size: 32px;
+  color: #191C1E;
+  margin-bottom: 8px;
+}
+
+.login .right-side p{
+  font-weight: 400;
+  font-size: 32px;
+  color: #44474D;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.login .right-side form label{
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #44474D;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.login .right-side form .input-wrapper{
+  display: flex;
+  align-items: center;
+  border: 1px solid #E2E8F0;
+  padding: 10px 0;
+  transition: border-color 0.3s;
+}
+
+.login .right-side form .input-wrapper i {
+  color: #6b7280;
+  font-size: 18px;
+  width: 30px;
+  text-align: center;
+}
+.login .right-side form .input-wrapper input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #111827;
+  background: transparent;
+  padding: 0 10px;
+}
+.login .right-side form input::placeholder{
+  font-size: 14px;
+  color: #CBD5E1;
+}
+.login .right-side form .input-wrapper .toggle-password {
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.login .right-side form .options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.login .right-side form  .remember-me {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.login .right-side form  .remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  accent-color: #1f2937; 
+  cursor: pointer;
+}
+
+.login .right-side form  .forgot-password {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login .right-side form  .forgot-password:hover {
+  color: #4b5563;
+}
+
+.login .right-side form  .submit-btn {
+  width: 325px;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.login .right-side form  .submit-btn:hover {
+  background-color: #1e293b;
+}
+
+.login .right-side form  .submit-btn i {
+  font-size: 14px;
+}
+
+
+
+

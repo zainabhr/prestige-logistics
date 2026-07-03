@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Users from './pages/Users'
 import Restaurants from './pages/Restaurants'
@@ -12,12 +12,13 @@ import Sidebar from './components/SideBar'
 import Header from './components/Header'
 
 function App() {
-  
+  const location = useLocation()
+  const isLoginPage = location.pathname === '/login'
   return (
   <>
-    <BrowserRouter basename="/prestige-logistics">
-    <Header />
-    <Sidebar />
+    
+    {!isLoginPage && <Header />}
+    {!isLoginPage && <Sidebar />}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/users' element={<Users />} />
@@ -28,7 +29,7 @@ function App() {
         <Route path='/orders' element={<Orders />} />
         <Route path='/login' element={<Login />} />
       </Routes>
-    </BrowserRouter>
+    
   </>
   )
 }
