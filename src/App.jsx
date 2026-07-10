@@ -13,21 +13,21 @@ import Header from './components/Header'
 
 function App() {
   const location = useLocation()
-  const isLoginPage = location.pathname === '/login'
+  const isLoginPage = location.pathname === '/'
   return (
   <>
     
     {!isLoginPage && <Header />}
     {!isLoginPage && <Sidebar />}
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/dashboard' element={<Home />} />
         <Route path='/users' element={<Users />} />
         <Route path='/drivers' element={<Drivers />} />
         <Route path='/ads' element={<Ads />} />
         <Route path='/restaurants' element={<Restaurants />} />
         <Route path='/promo-codes' element={<PromoCodes />} />
         <Route path='/orders' element={<Orders />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
       </Routes>
     
   </>

@@ -51,7 +51,7 @@ function PromoCodes(){
                                 <td><span >20%</span></td>
                                 <td>450 / 500</td>
                                 <td>2024/09/30</td>
-                                <td>نشط</td>
+                                <td><span className="table-status active"> نشط </span></td>
                                 <td className="actions">
                                     <i className="fas fa-trash-alt"></i>
                                     <i className="fas fa-ban"></i>
@@ -63,7 +63,7 @@ function PromoCodes(){
                                 <td><span >50%</span>(الحد اليومي)</td>
                                 <td>1,200</td>
                                 <td>2024/12/31</td>
-                                <td><span>نشط</span></td>
+                                <td><span className="table-status active"> نشط </span></td>
                                 <td className="actions">
                                     <i className="fas fa-trash-alt"></i>
                                     <i className="fas fa-ban"></i>
@@ -77,7 +77,7 @@ function PromoCodes(){
                                 </td>
                                 <td>890 / 1,000</td>
                                 <td>2024/01/01</td>
-                                <td><span>غير نشط</span></td>
+                                <span className="table-status inactive"> غير نشط </span>
                                 <td className="actions">
                                     <i className="fas fa-trash-alt"></i>
                                     <i className="fas fa-circle-check"></i>

@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PieChart, Pie, Cell ,BarChart, Bar , XAxis , ResponsiveContainer } from "recharts";
 import driverAhamdPhoto from '../assets/Ahamd Driver.jpg'
 import driverKhaledPhoto from '../assets/Khaled Driver.jpg'
@@ -7,6 +7,7 @@ import driverLailaPhoto from '../assets/Laila Driver.jpg'
 import driverSamiPhoto from '../assets/Sami Driver.jpg'
 
 function Home(){
+    const navigate = useNavigate()
     const dummyData = 
     [
         { name: '30 يوم', value1: 85, value2: 15 },   
@@ -221,10 +222,6 @@ function Home(){
                                     </Pie>
                                 </PieChart>
                             </ResponsiveContainer>
-                            {/* <div >
-                                <div >92%</div>
-                                <div >النجاح</div>
-                            </div> */}
                         </div>
                     </div>
                     <div className="colors-code">
@@ -252,7 +249,7 @@ function Home(){
                 <div className="first-col">
                     <div className="header">
                         <h3> آخر الطلبات </h3>
-                        <Link> عرض الكل </Link>
+                        <Link to='/orders'> عرض الكل </Link>
                     </div>
                     <table className='table-body'>
                         <tr>
@@ -274,7 +271,7 @@ function Home(){
                                 أحمد محمد 
                             </td>
                             <td className="cost">42.50$</td>
-                            <td>قيد التوصيل</td>
+                            <td ><span className="table-status in-progress"> قيد التوصيل </span></td>
                         </tr>
                         <tr>
                             <td dir="ltr" 
@@ -288,7 +285,7 @@ function Home(){
                                 سارة علي 
                             </td>
                             <td className="cost">18.00$</td>
-                            <td>مكتمل</td>
+                            <td ><span className="table-status done"> مكتمل </span></td>
                         </tr>
                         <tr>
                             <td dir="ltr" 
@@ -302,7 +299,7 @@ function Home(){
                                 ياسين خالد 
                             </td>
                             <td className="cost">65.20$</td>
-                            <td>تحضير</td>
+                            <td><span className="table-status prepare"> تحضير </span></td>
                         </tr>
                         <tr>
                             <td dir="ltr" 
@@ -317,7 +314,7 @@ function Home(){
                                 ليلى حسن
                             </td>
                             <td className="cost">112.45$</td>
-                            <td>مكتمل</td>
+                            <td><span className="table-status done"> مكتمل </span></td>
                         </tr>
                         <tr>
                             <td dir="ltr" 
@@ -332,7 +329,10 @@ function Home(){
                                 عمر فاروق 
                             </td>
                             <td  className="cost">29.90$</td>
-                            <td style={{ borderBottomLeftRadius: '10px'}}>ملغى</td>
+                            <td 
+                            
+                            style={{ borderBottomLeftRadius: '10px'}}>
+                                <span className="table-status canceled"> ملغى </span></td>
                         </tr>
                     </table>
                 </div>
@@ -394,7 +394,10 @@ function Home(){
                                 <p className="text">إيرادات اليوم</p>
                             </div>
                         </div>
-                        <button className="update-btn">
+                        <button 
+                        className="update-btn" 
+                        onClick={() => navigate('/drivers')}
+                        >
                             مراقبة جميع السائقين
                         </button>
                     </div>                    

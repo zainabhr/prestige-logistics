@@ -42,7 +42,7 @@ header{
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 header .img-container{
@@ -79,7 +79,7 @@ header i{
 
 header i:hover{
   cursor: pointer;
-  border: 1px solid darkgray;
+  /* border: 1px solid darkgray; */
 }
 
 header input{
@@ -250,6 +250,40 @@ header input::placeholder{
   font-size: 14px;
   font-weight: 400;
   margin-right: 10px;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.table-status{
+  padding: 2px 4px;  
+  border-radius: 12px;
+}
+
+.table-status.done, .table-status.active{
+  color: #059669;
+  background-color: #ECFDF5;
+}
+
+.table-status.in-progress, .table-status.working{
+  color: #2563EB;
+  background: #EFF6FF;
+}
+
+.table-status.prepare{
+  color: #D97706;
+  background: #FFFBEB;
+}
+
+.table-status.canceled{
+  background: #FEF2F2;
+  color: #DC2626;
+}
+
+.table-status.inactive, .table-status.not-working{
+  background: #F1F5F9;
+  color:#64748B;
 }
 
 /* ======================================= HOME PAGE ======================================= */
@@ -461,6 +495,13 @@ header input::placeholder{
   font-weight: 700;
   margin-right: 0px;
   margin-top: 24px;
+  transition: all .3s;
+}
+
+.home .special-drivers-box button:hover{
+  background-color: #475569;
+  color: #FFF;
+  cursor: pointer;
 }
 
 
@@ -1000,8 +1041,8 @@ header input::placeholder{
   margin-right: 5px;
 }
 
-.drivers .table-box td span,
-.orders .table-body td span{
+.drivers .table-box td .first-letter,
+.orders .table-body td .first-letter{
   display: inline-flex;
   width: 40px;
   height: 40px;
@@ -1534,7 +1575,7 @@ header input::placeholder{
 }
 
 .login .right-side form .input-wrapper i {
-  color: #6b7280;
+  color: #75777E;
   font-size: 18px;
   width: 30px;
   text-align: center;
@@ -1545,7 +1586,7 @@ header input::placeholder{
   width: 100%;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
-  color: #111827;
+  color: #0D1C32;
   background: transparent;
   padding: 0 10px;
 }
@@ -1555,7 +1596,7 @@ header input::placeholder{
 }
 .login .right-side form .input-wrapper .toggle-password {
   cursor: pointer;
-  color: #6b7280;
+  color: #75777E;
   font-size: 18px;
 }
 
@@ -1578,30 +1619,32 @@ header input::placeholder{
   width: 16px;
   height: 16px;
   margin-right: 10px;
-  accent-color: #1f2937; 
+  accent-color: #44474D; 
   cursor: pointer;
 }
 
 .login .right-side form  .forgot-password {
   font-size: 14px;
   font-weight: 700;
-  color: #111827;
+  color: #0D1C32;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .login .right-side form  .forgot-password:hover {
-  color: #4b5563;
+  color: #44474D;
 }
 
 .login .right-side form  .submit-btn {
   width: 325px;
   border: none;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .login .right-side form  .submit-btn:hover {
-  background-color: #1e293b;
+  background-color: #4b5563;
+  /* color: #0D1C32; */
+  cursor: pointer;
 }
 
 .login .right-side form  .submit-btn i {

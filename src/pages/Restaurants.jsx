@@ -69,7 +69,7 @@ function Restaurants(){
                             <td><span>LU</span> لو بريميير جورميه </td>
                             <td>الرياض</td>
                             <td>15%</td>
-                            <td>نشط</td>
+                            <td><span className="table-status active"> نشط </span></td>
                             <td>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      
@@ -80,7 +80,7 @@ function Restaurants(){
                             <td><span>ST</span> ستيك هاوس الرواد </td>
                             <td>جدة</td>
                             <td>12%</td>
-                            <td>نشط</td>
+                            <td><span className="table-status active"> نشط </span></td>
                             <td>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      
@@ -93,7 +93,7 @@ function Restaurants(){
                             </td>
                             <td>الدمام</td>
                             <td>10%</td>
-                            <td>غير نشط</td>
+                            <span className="table-status inactive"> غير نشط </span>
                             <td style={{ borderBottomLeftRadius: '10px'}}>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      

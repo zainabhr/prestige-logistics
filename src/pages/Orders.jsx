@@ -69,7 +69,7 @@ function Orders(){
                                 <p className="order-date">24 / 11 / 2021</p>
                             </td>
                             <td className='img-container'>
-                                <span>JS</span>
+                                <span  className='first-letter'>JS</span>
                                 <div>
                                     <p className="client-name"> جاسم السعيد </p >
                                     <p dir="ltr"  className="client-number">+963 50 132 4569</p>
@@ -86,7 +86,7 @@ function Orders(){
                                 </p>
                             </td>
                             <td dir="ltr"  className="cost">245.00 SAR</td>
-                            <td>قيد التوصيل</td>
+                            <td ><span className="table-status in-progress"> قيد التوصيل </span></td>
                             <td>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      
@@ -99,7 +99,7 @@ function Orders(){
                                 <p className="order-date">25 / 12 / 2021</p>
                             </td>
                             <td className='img-container'>
-                                <span>MA</span>
+                                <span  className='first-letter'>MA</span>
                                 <div>
                                     <p className="client-name"> منى الأحمد </p>
                                     <p dir="ltr"  className="client-number">+963 55 986 6543</p>
@@ -116,7 +116,7 @@ function Orders(){
                                 </p>
                             </td>
                             <td dir="ltr"  className="cost">120.50 SAR</td>
-                            <td>معلق </td>
+                            <td><span className="table-status prepare"> معلق </span></td>
                             <td>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      
@@ -129,7 +129,7 @@ function Orders(){
                                 <p className="order-date">26 / 1 / 2022</p>
                             </td>
                             <td className='img-container'>
-                                <span>KH</span>
+                                <span  className='first-letter'>KH</span>
                                 <div>
                                     <p className="client-name"> خالد حسن </p>
                                     <p dir="ltr"  className="client-number">+963 55 132 2222</p>
@@ -146,7 +146,7 @@ function Orders(){
                                 </p>
                             </td>
                             <td dir="ltr"  className="cost">380.00 SAR</td>
-                            <td> مكتمل </td>
+                            <td><span className="table-status done"> مكتمل </span></td>
                             <td style={{ borderBottomLeftRadius: '10px'}}>
                                 <i className="fas fa-eye"></i>  
                                 <i className="fas fa-pen"></i>      

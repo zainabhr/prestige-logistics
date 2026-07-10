@@ -5,7 +5,7 @@ function Sidebar() {
         <div className="sidebar">
             <h2>Prestige Logistics</h2>
             <ul>
-                <li><NavLink to="/"><i className="fas fa-home "></i>Home</NavLink></li>
+                <li><NavLink to="/dashboard"><i className="fas fa-home "></i>Home</NavLink></li>
                 <li><NavLink to="/users"><i className="fas fa-users "></i>Users</NavLink></li>
                 <li><NavLink to="/drivers"><i className="fas fa-truck "></i>Drivers</NavLink></li>
                 <li><NavLink to="/restaurants"><i className="fas fa-utensils "></i>Restaurants</NavLink></li>

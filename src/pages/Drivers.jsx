@@ -115,48 +115,48 @@ function Drivers(){
                             <th>إجراءات</th>
                         </tr>
                         <tr>
-                            <td><span>ف</span > فيصل العتيبي</td>
+                            <td><span className='first-letter'>ف</span > فيصل العتيبي</td>
                             <td>+966 50 123 4567</td>
                             <td>الرياض</td>
                             <td>شاحنة تريد 12م</td>
-                            <td> نشط </td>
-                            <td> نعم </td>
+                            <td><span className="table-status active"> نشط </span></td>
+                            <td><span className="table-status working"> نعم </span></td>
                             <td className="actions">
                                 <i className="fas fa-ban"></i>
                                 <i className="fas fa-pen"></i>
                             </td>
                         </tr>
                         <tr>
-                            <td><span>س</span> سعود الحربي</td>
+                            <td><span className='first-letter'>س</span> سعود الحربي</td>
                             <td>+966 55 987 6543</td>
                             <td>جدة</td>
                             <td>بيك أب تويوتا</td>
-                            <td> نشط </td>
-                            <td> لا </td>
+                            <td><span className="table-status active"> نشط </span></td>
+                            <td><span className="table-status not-working"> لا </span></td>
                             <td className="actions">
                                 <i className="fas fa-ban"></i>
                                 <i className="fas fa-pen"></i>
                             </td>
                         </tr>
                         <tr>
-                            <td><span>خ</span> خالد العمري</td>
+                            <td><span className='first-letter'>خ</span> خالد العمري</td>
                             <td>+966 54 321 0987</td>
                             <td>الدمام</td>
                             <td>شاحنة ثقيلة</td>
-                            <td>غير نشط </td>
-                            <td> لا </td>
+                            <td><span className="table-status inactive"> غير نشط </span></td>
+                            <td><span className="table-status not-working"> لا </span></td>
                             <td className="actions">
                                 <i className="fas fa-circle-check"></i>
                                 <i className="fas fa-pen"></i>
                             </td>
                         </tr>
                         <tr>
-                            <td><span>م</span> ماجد السبيعي</td>
+                            <td><span className='first-letter'>م</span> ماجد السبيعي</td>
                             <td>+966 56 111 2233</td>
                             <td>الرياض</td>
                             <td>فان بضائع</td>
-                            <td> نشط </td>
-                            <td> نعم </td>
+                            <td><span className="table-status active"> نشط </span></td>
+                            <td><span className="table-status working"> نعم </span></td>
                             <td className="actions">
                                 <i className="fas fa-ban"></i>
                                 <i className="fas fa-pen"></i>

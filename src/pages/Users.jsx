@@ -63,7 +63,7 @@ function Users(){
                         <td>050XXXXX91</td>
                         <td>m.otaibi@example.com</td>
                         <td>الرياض</td>
-                        <td>نشط</td>
+                        <td><span className="table-status active"> نشط </span></td>
                         <td>15 / 5 / 2023</td>
                         <td>
                             <i className="fas fa-pen"></i>      
@@ -84,7 +84,7 @@ function Users(){
                         <td>050XXXXX44</td>
                         <td>s.shammari@example.com</td>
                         <td>جدة</td>
-                        <td>معطل</td>
+                        <td><span className="table-status inactive"> معطل </span></td>
                         <td>28 / 5 / 2023</td>
                         <td>
                             <i className="fas fa-pen"></i>      
@@ -105,7 +105,7 @@ function Users(){
                         <td>050XXXXX21</td>
                         <td>k.ghamdi@example.com</td>
                         <td>الدمام</td>
-                        <td>نشط</td>
+                        <td><span className="table-status active"> نشط </span></td>
                         <td>5 / 10 / 2023</td>
                         <td>
                             <i className="fas fa-pen"></i>      
@@ -126,7 +126,7 @@ function Users(){
                         <td>050XXXXX32</td>
                         <td>r.qahtani@example.com</td>
                         <td>الدمام</td>
-                        <td>نشط</td>
+                        <td><span className="table-status active"> نشط </span></td>
                         <td>18 / 12 / 2023</td>
                         <td>
                             <i className="fas fa-pen"></i>      

@@ -1,6 +1,37 @@
 import LoginPhoto from '../assets/login page.png'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import apiClient from '../services/api';
 
 function Login(){
+    const [phone, setPhone] = useState('')
+    const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
+    const [errMsg, setErrMsg] = useState('')
+    const navigate = useNavigate()
+
+    const handleLogin = (event) => {
+        event.preventDefault()
+
+        const loginData = {
+            phone: phone,
+            password: password
+        }
+
+        apiClient.post('/adminlogin',loginData).then(response =>{
+            console.log('تم تسجيل الدخول بنجاح ', response)
+            const token = response.data.token;
+            localStorage.setItem('admin_token', token)
+
+            navigate('/dashboard')
+        })
+        .catch (err =>{
+            console.error('خطأ في تسجيل الدخول:', err)
+            setErrMsg('رقم الهاتف أو كلمة المرور غير صحيحة')
+        })
+        // navigate('/dashboard')
+
+    }
     return(
         <section dir='ltr' className='login'>
             <div className="left-side">
@@ -21,22 +52,36 @@ function Login(){
                     <div className="login-box">
                         <h1>Welcome Back</h1>
                         <p>Please authenticate to access the management portal.</p>
+                        {errMsg && <p style={{color: '#f00'}}> {errMsg}</p>}
 
-                        <form>
-                            <div className="input-group">
-                                <label>Email Address</label>
+                        <form onSubmit={handleLogin}>
+                            <div>
+                                <label>Phone Number</label>
                                 <div className="input-wrapper">
                                     <i className="fa-regular fa-envelope"></i>
-                                    <input type="email" placeholder="admin@culinarylogix.com"  />
+                                    <input 
+                                        type="tel" 
+                                        placeholder="0933226655"
+                                        name='phone'
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        required
+                                        />
                                 </div>
                             </div>
 
-                            <div className="input-group">
+                            <div>
                                 <label>Password</label>
                                 <div className="input-wrapper">
                                     <i className="fa-solid fa-lock"></i>
-                                    <input type="password" placeholder="password123" />
-                                    <i className="fa-regular fa-eye toggle-password"></i>
+                                    <input 
+                                        type={showPassword? 'text' : "password"} 
+                                        placeholder="password123"
+                                        name='password'
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
+                                        />
+                                    <i className={`fa-regular ${showPassword ? 'fa-eye-slash':'fa-eye'} toggle-password`}
+                                        onClick={() => setShowPassword(!showPassword)}></i>
                                 </div>
                             </div>
 

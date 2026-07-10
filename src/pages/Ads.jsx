@@ -1,7 +1,24 @@
 import summerOfferImg from '../assets/summer offer img.jpg'
 import weekOfferImg from '../assets/week offer img.jpg'
+import { useEffect, useState } from 'react';
+import apiClient from '../services/api';
 
 function Ads(){
+    const [ads, setAds] = useState('')
+
+    
+    const fetchAds = () => {
+        apiClient.get('admin/all-ads').then(res =>{
+            setAds(res.data)
+            console.log('الاعلانات',res.data)
+        }).catch(err=>{
+            console.log('error in fetching ads', err)
+        })
+    }
+
+    useEffect(() =>{
+        fetchAds()
+    },[])
     return(
         <section className="ads">
             <div className="section-title-box">
@@ -9,7 +26,8 @@ function Ads(){
                     <h2 className="section-title">إدارة الإعلانات</h2>
                     <p className="section-topic">تتبع وتحكم في جميع الحملات الإعلانية النشطة والمجدولة</p>
                 </div>
-                <button className="add-new-btn">أضف إعلان جديد</button>
+                <button className="add-new-btn"
+                >أضف إعلان جديد</button>
 
             </div>
             <div className="activity-summary">
@@ -53,7 +71,7 @@ function Ads(){
                         </td>
                         <td>15 / 5 / 2024</td>
                         <td>15 / 8 / 2024</td>
-                        <td>Active</td>
+                        <td><span className="table-status active">Active</span></td>
                     </tr>
                     <tr>
                         <td><img src={weekOfferImg} alt="week Offer Img" /></td>
@@ -63,7 +81,7 @@ function Ads(){
                         </td>
                         <td>1 / 4 / 2024</td>
                         <td>15 / 4 / 2024</td>
-                        <td>Inactive</td>
+                        <td><span className="table-status inactive">Inactive</span></td>
                     </tr>
                 </table>
                 <div className="table-footer">
@@ -76,6 +94,7 @@ function Ads(){
                     </span>
                 </div>
             </div>
+            <div>{ads}</div>
         </section>
     )
 }
