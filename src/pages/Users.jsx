@@ -1,9 +1,28 @@
+import { useState, useEffect } from 'react'
+import apiClient from '../services/api'
+
 import profileImg1 from '../assets/profile img 1.jpg'
 import profileImg2 from '../assets/profile img 2.jpg'
 import profileImg3 from '../assets/profile img 3.jpg'
 import profileImg4 from '../assets/profile img 4.jpg'
 
 function Users(){
+    const [users, setUsers] = useState()
+
+      const fetchAds = () => {
+        apiClient.get('admin/getallcustomers').then(res =>{
+            console.log('الرد الفعلي من السيرفر:', res.data);
+            setUsers(res.data)
+
+        }).catch(err=>{
+            console.log('error in fetching ads', err)
+        })
+    }
+
+    useEffect(() =>{
+        fetchAds()
+    },[])
+    
     return(
         <section className="users">
             <div className="section-title-box">

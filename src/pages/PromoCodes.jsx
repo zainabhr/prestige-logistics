@@ -1,6 +1,90 @@
+import { createPortal } from 'react-dom';
 import profileImg from '../assets/promo-profile-image.jpg'
+import apiClient from '../services/api';
+import { useEffect, useState } from 'react';
+
+
+// {
+//     "code":"jamal1234",
+//     "discount_type":"percentage",
+//     "discount_value":20,
+//     "min_order_value":1000000,
+//     "max_uses":10,
+//     "expiry_date":"2026-10-02"
+// }
 
 function PromoCodes(){
+    const [promos, setPromos] = useState([])
+    const [promoCode, setPromoCode] = useState('')
+    const [discountType, setDiscountType] = useState('')
+    const [minOrderValue, setMinOrderValue] = useState('')
+    const [promoMaxUses, setPromoMaxUses] = useState()
+    const [promoExpiryDate, setPromoExpiryDate] = useState()
+    const [discountValue, setDiscountValue] = useState(null)
+    const [showModel, setShowModel] = useState(false)
+
+    // console.log('البيانات المخزنة:', ads);
+    
+    const fetchPromos = () => {
+        apiClient.get('admin/getPromoCode').then(res =>{
+            console.log('الرد الفعلي من السيرفر:', res.data.data);
+            setPromos(res.data.data)
+
+        }).catch(err=>{
+            console.log('error in fetching ads', err)
+        })
+    }
+
+    const toggleModel = () =>{
+        setShowModel(!showModel)
+    }
+
+    const handleAddingPromo = (event) =>{
+        event.preventDefault()
+
+        const promoCodeData = {
+            "code": promoCode,
+            "discount_type": discountType,
+            "discount_value": discountValue,
+            "min_order_value": minOrderValue,
+            "max_uses": promoMaxUses,
+            "expiry_date": promoExpiryDate
+        }
+        
+    
+        apiClient.post('admin/AddPromoCode',promoCodeData)
+        .then(res => {
+            console.log('تمت إضافة الكود بنجاح', res.data)
+            fetchPromos()
+            setPromoCode('')
+            setMinOrderValue('')
+            setDiscountType('')
+            setPromoMaxUses('')
+            setPromoExpiryDate('')
+            setDiscountValue('')
+        }).catch(err =>{
+            console.error('حدث خطأ في إضافة كود الخصم', err)
+        })
+        setShowModel(!showModel)
+        
+    }
+
+
+    const deletePromoCode = (id) =>{
+        apiClient.delete(`admin/DeletePromoCode/${id}`)
+        .then(res =>{
+            console.log('تم حذف الكود بنجاح', res.data)
+            fetchPromos()
+
+        }
+        ).catch(err =>
+            console.error('حدث في عملية الحذف',err)
+        )
+    }
+
+    useEffect(() =>{
+        fetchPromos()
+    },[])
     return(
         <section className="promo-codes">
             <div className="section-title-box">
@@ -8,7 +92,9 @@ function PromoCodes(){
                     <h2 className="section-title"> إدارة أكواد الخصم </h2>
                     <p className="section-topic"> إدارة وتتبع فعالية الحملات الترويجية وقسائم الشراء </p>
                 </div>
-                <button className="add-new-btn"> إضافة كود جديد + </button>
+                <button 
+                onClick={toggleModel}
+                className="add-new-btn"> إضافة كود جديد + </button>
 
             </div>
             <div className="activity-summary">
@@ -46,6 +132,25 @@ function PromoCodes(){
                                 <th>الحالة</th>
                                 <th>العمليات</th>
                             </tr>
+                            {promos.map((promo)=>(
+                                <tr key={promo.id}>
+                                    <td><span>{promo.code}</span></td>
+                                    <td><span >
+                                        {promo.discount_type === 'percentage'? `${promo.discount_value}%` : promo.discount_value}
+                                    </span></td>
+                                    <td>{promo.min_order_value} /{promo.max_uses}</td>
+                                    <td>{promo.expiry_date}</td>
+                                    <td><span className="table-status active"> نشط </span></td>
+                                    <td className="actions">
+                                        <i className="fas fa-trash-alt"
+                                        onClick={() => deletePromoCode(promo.id)}
+                                        ></i>
+                                        <i className="fas fa-ban"></i>
+                                        <i className="fas fa-pen"></i>
+                                    </td>
+                                </tr>
+
+                    ))}
                             <tr>
                                 <td><span>SUMMER20</span></td>
                                 <td><span >20%</span></td>
@@ -120,6 +225,79 @@ function PromoCodes(){
                     </div>
                 </div>
             </div>
+
+            {showModel && createPortal(
+                <div className="overlay">
+                    <div className="modal-content">
+                        
+                        <h2> إضافة كود خصم جديد  </h2>
+                        <button 
+                        className="close"
+                        onClick={() => setShowModel(!showModel)}
+                        >
+                            <i className="fa-solid fa-xmark"></i>
+                        </button>
+                        <form onSubmit={handleAddingPromo}
+                        style={{display: 'grid',gridTemplateColumns: '1fr 1fr',columnGap: '10px'}}
+                        >
+                            <label htmlFor="promo-code"> كود الخصم   </label>
+                            <input 
+                            type="text" 
+                            name="promo-code" 
+                            id="promo-code"
+                            onChange={(e)=> setPromoCode(e.target.value)}
+                            required
+                            />
+                            <label htmlFor="promo-discount_type"> نسبة الخصم   </label>
+                            <select 
+                            name="promo-discount_type" 
+                            id="promo-discount_type"
+                            onChange={(e)=> setDiscountType(e.target.value)}
+                            required
+                            >
+                                <option value=""> اختر نسبة</option>
+                                <option value="percentage">percentage</option>
+                                <option value="fixed">fixed</option>
+                            </select>
+                            <label htmlFor="promo-discount_value"> قيمة الخصم   </label>
+                            <input 
+                            type="number" 
+                            name="promo-discount_value" 
+                            id="promo-discount_value"
+                            onChange={(e)=> setDiscountValue(e.target.value)}
+                            required
+                            />
+                            <label htmlFor="promo-min_order_value">  الحد الأدنى لقيمة الطلب   </label>
+                            <input 
+                            type="number" 
+                            name="promo-min_order_value" 
+                            id="promo-min_order_value"
+                            onChange={(e)=> setMinOrderValue(e.target.value)}
+                            required
+                            />
+                            <label htmlFor="promo-max-uses"> الحد الأقصى لاستخدام الخصم   </label>
+                            <input 
+                            type="number" 
+                            name="promo-max-uses" 
+                            id="promo-max-uses"
+                            onChange={(e)=> setPromoMaxUses(e.target.value)}
+                            required
+                            />
+                            <label htmlFor="promo-code-expiry">   تاريخ انتهاء صلاحية الخصم  </label>
+                            <input 
+                            type="date" 
+                            name="promo-code-expiry" 
+                            id="promo-code-expiry"
+                            onChange={(e)=> setPromoExpiryDate(e.target.value)}
+                            required
+                            />
+                            <button 
+                            style={{gridColumn: '1 / span 2'}} 
+                            type='submit'>أضف الكود</button>
+                        </form>
+                    </div>               
+                </div>,document.body
+            )}
         </section>
     )
 }
