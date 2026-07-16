@@ -6,7 +6,7 @@ function Orders(){
                     <h2 className="section-title">إدارة الطلبات</h2>
                     <p className="section-topic"> عرض ومتابعة كافة العمليات اللوجستية في الوقت الفعلي</p>
                 </div>
-                <div>
+                <div className="section-title-btns">
                     <button className="filter-btn"> <i className="fas fa-filter"></i> تصفية متقدمة </button>
                     <button className="report-btn"> <i className="fas fa-download"></i> تصدير التقرير </button>
                 </div>

@@ -169,7 +169,7 @@ function Drivers(){
                     <h2 className="section-title"> إدارة السائقين </h2>
                     <p className="section-topic">نظرة عامة على حالة الأسطول وإدارة العمليات اليومية</p>
                 </div>
-                <div>
+                <div className='section-title-btns'>
                     <button
                     onClick={toggleModel}
                     className="add-new-btn"> 
@@ -261,8 +261,10 @@ function Drivers(){
             <div className="table-box">
                 <div className="filter-bar">
                     <div>
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="بحث باسم السائق أو المدينة..." />
+                        <div className='input-wrapper'>
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="بحث باسم السائق أو المدينة..." />
+                        </div>
                         <select id="cityFilter"  
                         name='cityFilter' 
                         defaultValue=''
@@ -382,7 +384,7 @@ function Drivers(){
                 </div>
             </div>
                 
-            {showPasswordModel && (
+            {showPasswordModel && createPortal(
                 <div className="overlay">
                     <div className="modal-content">
                         
@@ -411,12 +413,14 @@ function Drivers(){
                             <button type='submit'> عدل كلمة السر </button>
                         </form>
                     </div>               
-                </div>
+                </div>, document.body
             )}
             {showModel && createPortal(
                 <div className="overlay">
                     <div className="modal-content"
-                    style={{maxWidth:'820px'}}>
+                    style={window.innerWidth > 680 ? 
+                            {maxWidth:'820px'} : 
+                            {width:"100%", height: '100%', padding: '5px'} }>
                         
                         <h2> إضافة حساب سائق جديد  </h2>
                         <button 
@@ -426,43 +430,74 @@ function Drivers(){
                         >
                             <i className="fa-solid fa-xmark"></i>
                         </button>
-                        <form onSubmit={handleAddingDriver}
-                        style={{display: 'grid',gridTemplateColumns: '1fr 1fr',columnGap: '10px'}}>
-                            <label htmlFor="full-name"> الاسم الكامل    </label>
+                        <form
+                        onSubmit={handleAddingDriver}
+                        style={window.innerWidth > 680 ? 
+                            {display: 'grid',gridTemplateColumns: '1fr 1fr',columnGap: '10px'} : 
+                            {display: 'flex',flexDirection: 'column'} }
+                        >
+                            <label 
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
+                            htmlFor="full-name"> الاسم الكامل    </label>
                             <input
                             required 
                             type="text" 
                             name="full-name" 
                             id="full-name"
                             onChange={(e)=> setFullName(e.target.value)}
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
                             />
-                            <label htmlFor="phone"> رقم السائق </label>
+                            <label 
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
+                            htmlFor="phone"> رقم السائق </label>
                             <input
                             required 
                             type="tel" 
                             name="phone" 
                             id="phone"
                             onChange={(e)=> setPhoneNum(e.target.value)}
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
                             />
-                            <label htmlFor="password"> كلمة السر  </label>
+                            <label 
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
+                            htmlFor="password"> كلمة السر  </label>
                             <div 
-                            className="input-wrapper">
+                            className="input-wrapper"
+                            style={{height: '50px', paddingBottom:'0px', marginBottom:'5px'}}>
                                 <input 
                                     type={showPassword? 'text' : "password"} 
                                     placeholder="password123"
                                     name='password'
+                                    
                                     onChange={(e)=> setPassword(e.target.value)}
                                     required
                                     />
                                 <i className={`fa-regular ${showPassword ? 'fa-eye-slash':'fa-eye'} toggle-password`}
                                     onClick={() => setShowPassword(!showPassword)}></i>
                             </div>
-                            <label htmlFor="vehicle-type"> نوع المركبة  </label>
+                            <label 
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
+                            htmlFor="vehicle-type"> نوع المركبة  </label>
                             <select 
                             name="vehicle-type" 
                             id="vehicle-type"
                             onChange={(e)=> setVehicleType(e.target.value)}
                             required
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
                             >
                                 <option value=""> اختر مركبة</option>
                                 <option value="دراجة نارية">دراجة نارية</option>
@@ -470,25 +505,39 @@ function Drivers(){
                                 <option value="شاحنة">شاحنة </option>
                             </select>
                             
-                            <label htmlFor="vehicle-number"> رقم المركبة   </label>
+                            <label 
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
+                            htmlFor="vehicle-number"> رقم المركبة   </label>
                             <input 
                             type="text" 
                             name="vehicle-number" 
                             id="vehicle-number"
                             onChange={(e)=> setVehicleNumber(e.target.value)}
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
                             required
                             />
-                            <label htmlFor="city">  المدينة  </label>
+                            <label 
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
+                            htmlFor="city">  المدينة  </label>
                             <input 
                             type="text" 
                             name="city" 
                             id="city"
                             onChange={(e)=> setCity(e.target.value)}
+                            style={window.innerWidth > 680 ? 
+                            {} : 
+                            {marginBottom: "0px"} }
                             required
                             />
                             <h4> تحديد ساعات العمل </h4>
                             {workingHours.map((item) => (
-                                <div key={item.day_of_week} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', gap: '15px' }}>
+                                <div key={item.day_of_week} style={{ display: 'flex', alignItems: 'center', marginBottom: '0px', gap: '15px' }}>
                                     <span style={{ width: '100px', fontWeight: 'bold', textTransform: 'capitalize' }}>
                                         {item.day_of_week}
                                     </span>
@@ -515,7 +564,7 @@ function Drivers(){
                                 </div>
                             ))}
                             <button
-                            style={{gridColumn: '1 / span 2'}} 
+                            style={{gridColumn: '1 / span 2', marginTop:'0'}} 
                             type='submit'>أضف السائق</button>
                         </form>
                     </div>               

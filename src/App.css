@@ -1,7 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body{
@@ -42,7 +42,6 @@ header{
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  /* z-index: -1; */
 }
 
 header .img-container{
@@ -93,6 +92,28 @@ header input::placeholder{
   color: #6b7280;
 }
 
+header .menubar{
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  float: left;
+  overflow: hidden;
+}
+
+header .bar1,header .bar2,header .bar3{
+  border: 2px solid #0A192F;
+  margin: 5px 10px;
+  width: 30px;
+  border-radius: 1px;
+  transition: 0.5s ease;
+}
+
+header h1{
+  display: none;
+  color: #0D1C32;
+}
+
 /* ======================================= SIDEBAR ======================================= */
 
 .sidebar {
@@ -103,6 +124,7 @@ header input::placeholder{
   background-color: #d9d9d9;
   height: 100vh;
   padding: 20px 0;
+  transition: display 0.4s;
 }
 
 .sidebar h2{
@@ -146,6 +168,10 @@ header input::placeholder{
   background-color: #0F172A;
 }
 
+.sidebar .close{
+  display: none;
+  }
+
 /* ======================================= GENERAL STYLES ======================================= */
 
 .home,
@@ -157,7 +183,7 @@ header input::placeholder{
 .promo-codes{
   /* width: 100%; */
   animation: slideRight 1s ease  forwards;
-  margin-right: 300px;
+  margin-right: 275px;
   margin-top: 30px;
   position: relative;
 }
@@ -742,7 +768,8 @@ input::placeholder{
 .restaurants table td i,
 .drivers table td i,
 .promo-codes table td i,
-.orders table td i{
+.orders table td i,
+.ads table td i{
   font-size: 16px;
   margin: 0 5px;
   color: #94A3B8;
@@ -766,7 +793,6 @@ input::placeholder{
   display: flex;
   flex-direction: row;
   align-items: center;
-  
 }
 
 
@@ -785,7 +811,7 @@ input::placeholder{
 }
 
 .restaurants .activity-summary .box{
-  width: 250px;
+  width: 225px;
   height: 130px;
   box-shadow: 0px 4px 10px #0a192f;
   display: flex;
@@ -1183,13 +1209,17 @@ input::placeholder{
   border-bottom: 1px solid #f1f5f9;
 }
 
+.drivers .filter-bar .input-wrapper{
+  display: inline;
+  margin-left: 20px;
+}
+
 .drivers .filter-bar input{
   width: 200px;
   height: 45px;
   padding: 5px;
   border: none;
   border-radius: 15px;
-  margin-left: 20px;
 }
 
 .drivers .filter-bar select{
@@ -1252,10 +1282,7 @@ input::placeholder{
 .drivers .modal-content form button[type='submit'] {
   grid-column: 1 / span 2
 }
-/*
-display: 'flex',alignItems: 'center',justifyContent: 'center', border:' 1px solid #E2E8F0',margin: '5px 0',paddingTop: '5px' 
 
-*/
 .drivers .driver-overlay .input-wrapper{
   display: flex;
   align-items: center;
@@ -1274,7 +1301,7 @@ display: 'flex',alignItems: 'center',justifyContent: 'center', border:' 1px soli
 
 .promo-codes .activity-summary .box
 {
-  width: 250px;
+  width: 225px;
   height: 110px;
 
 }
@@ -1385,7 +1412,7 @@ display: 'flex',alignItems: 'center',justifyContent: 'center', border:' 1px soli
 }
 
 .orders .activity-summary .box{
-  width: 240px;
+  width: 225px;
 }
 
 .orders .orders-list{
@@ -1719,8 +1746,6 @@ display: 'flex',alignItems: 'center',justifyContent: 'center', border:' 1px soli
   margin-bottom: 8px;
 }
 
-
-
 .login .right-side form .options-row {
   display: flex;
   justify-content: space-between;
@@ -1772,6 +1797,371 @@ display: 'flex',alignItems: 'center',justifyContent: 'center', border:' 1px soli
   font-size: 14px;
 }
 
+/* ======================================= MEDIA QUERES ======================================= */
+
+@media (min-width: 681px) {
+    .sidebar {
+      display: block !important; 
+    }
+}
+
+@media (max-width: 650px){
+  .sidebar{
+    display: none;
+    z-index: 2;
+  }
+
+  .sidebar .close{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+}
+
+  header{
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  header h1{
+  display: block;
+  color: #0D1C32;
+}
+
+  header .menubar{
+    display: block;
+  }
+
+  header .img-container,
+  header  .icon,
+  header input{
+    display: none;
+  }
+
+  /* ======================================= MEDIA QUERES 
+    GENERAL STYLES======================================= */
+
+  .home,
+  .ads,
+  .users,
+  .restaurants,
+  .drivers,
+  .orders,
+  .promo-codes{
+    animation: slideRight 1s ease  forwards;
+    margin-right: 0px;
+    padding: 0 5px;
+    margin-top: 0px;
+    position: relative;
+  }
+
+.section-title-box{
+  padding: 0 5px;
+}
+
+  .section-title{
+    font-size: 22px;
+}
+
+  .activity-summary{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-block: 30px;
+  }
+
+  .table-footer{
+    padding: 10px 5px;
+    font-size: 10px;
+}
+
+  .table-footer button{
+    width: 28px;
+    height: 25px;
+    font-size: 10px;
+    margin: 0 2px;
+  }
+
+  .modal-content 
+
+  /* ======================================= MEDIA QUERES 
+    HOME PAGE======================================= */
+
+  .home .charts-box,
+  .home .tables-box,
+  .drivers .driver-report,
+  .restaurants .rest-list,
+  .orders .orders-list{
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+  }
+
+  .home .charts-box .bar-chart{
+    padding: 5px;
+}
+
+  .home .charts-box .pie-chart,
+  .home .special-drivers-box,
+  .drivers .table-body,
+  .orders .orders-list .first-col,
+  .orders .order-details{
+    width: 100%;
+  }
+
+  .home .tables-box .table-status{
+    font-size: 12px;
+    padding: 0;
+  }
+  
+  /* ======================================= MEDIA QUERES 
+    USERS PAGE======================================= */
+
+  .users form{
+    height: fit-content;
+    padding: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+  .users form div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #64748B;
+}
+
+  .users form div input,
+  .users form div select#cityFilter,
+  .users form div select#stateFilter{
+    width: 250px;
+}
+
+  .users .users-list{
+    width: 100%;
+    padding: 5px;
+}
+
+.users table td i,
+.restaurants table td i,
+.drivers table td i,
+.promo-codes table td i,
+.orders table td i,
+.ads table td i{
+  font-size: 12px;
+}
+
+  .users table td p{
+    font-size: 10px;
+}
+
+  .users table td img{
+    width: 25px;
+    height: 25px;
+    margin-left: 0px;
+}
+
+  .users td .img-container{
+    display: flex;
+    flex-direction: column;
+}
+
+  .users td .img-container h3{
+    font-size: 12px;
+    text-align: center;
+}
+
+  .users table tr{
+    display: inline-block;
+    width: 100%;
+  }
+
+  .users table th,
+  .drivers table th,
+  .restaurants table th,
+  .ads table th,
+  .promo-codes table th,
+  .orders table th{
+    font-size: 12px;
+    text-align: center;
+    padding-right: 7px;
+  }
+
+  .users table td,
+  .drivers table td,
+  .ads table td,
+  .promo-codes table td{
+    padding: 5px;
+    font-size: 10px;
+    width: 50px;
+    max-width: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 50px;
+  }
+
+  /* ======================================= MEDIA QUERES 
+    DRIVERS PAGE======================================= */
+
+  .drivers .section-title-btns,
+  .restaurants .section-title-btns,
+  .orders .section-title-btns{
+    width: 125px;
+    margin: 5px ;
+  }
+
+  .drivers .section-title-box button,
+  .restaurants .section-title-box button,
+  .orders .section-title-box button{
+    width: 125px;
+    margin: 5px 0;
+  }
+
+  .drivers .driver-report .current-driver-div{
+    height: fit-content;
+  }
+  
+  .drivers .filter-bar{
+    padding: 10px;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+  .drivers .filter-bar .input-wrapper{
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .drivers .filter-bar input{
+    width: 200px;
+    margin-left: 0px;
+    margin-bottom: 10px
+  }
+  
+  .drivers .filter-bar select{
+    width: 250px;
+    margin-left: 0px;
+    margin-bottom: 10px
+  }
+
+  .drivers .table-box td .first-letter{
+    width: 25px;
+    height: 25px;
+  }
+
+  .drivers table th{
+    text-align: right;
+    padding: 0px 5px 0 0 ;
+  }
 
 
+  /* ======================================= MEDIA QUERES 
+    RESTAURANTS PAGE======================================= */
+
+    .restaurants .rest-list .table-header{
+      width: 100%;
+      padding: 10px;
+      /* font-size: 14px; */
+    }
+
+  .restaurants .rest-details{
+    padding: 10px;
+    width: 100%;
+}
+
+
+  /* ======================================= MEDIA QUERES 
+    ADS PAGE======================================= */
+
+  .ads .ads-list{
+    padding: 10px;
+}
+
+  .ads table td img{
+    width: 30px;
+    height: 20px;
+}
+
+  /* ======================================= MEDIA QUERES 
+    PROMO-CODE PAGE======================================= */
+
+.promo-codes .table-header{
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+  .promo-codes .promo-analysis{
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 5px 0;
+}
+
+  .promo-codes .analysis{
+    width: 100%;
+    height: fit-content;
+    padding: 15px;
+  }
+
+
+  /* ======================================= MEDIA QUERES 
+    ORDERS PAGE======================================= */
+
+  .orders table td{
+    text-align: center;
+    padding: 5px 0;
+    font-size: 10px;
+    background-color: #fff; 
+  }
+
+  
+.orders table td .order-num{
+  font-size: 12px;
+}
+
+.orders table td .order-date{
+  font-size: 10px;
+}
+
+.orders table td.img-container{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.orders .table-body td .first-letter{
+  width: 30px;
+  height: 30px;
+}
+
+.orders table td.img-container .client-name{
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.orders table td.img-container .client-number{
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.orders table td.cost{
+  font-size: 12px;
+
+}
+
+
+}
 

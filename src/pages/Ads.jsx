@@ -26,6 +26,7 @@ function Ads(){
 
     const toggleModel = () =>{
         setShowModel(!showModel)
+        window.scrollTo({top: '-95px' , behavior: 'smooth'})
     }
 
     const handleAddingAds = (event) =>{
@@ -112,6 +113,10 @@ function Ads(){
                             <td>15 / 5 / 2024</td>
                             <td>15 / 8 / 2024</td>
                             <td><span className="table-status active">Active</span></td>
+                            <td className="actions">
+                                <i className="fas fa-ban"></i>
+                                <i className="fas fa-pen"></i>
+                            </td>
                         
                         </tr>
 
@@ -126,6 +131,10 @@ function Ads(){
                         <td>1 / 4 / 2024</td>
                         <td>15 / 4 / 2024</td>
                         <td><span className="table-status inactive">Inactive</span></td>
+                        <td className="actions">
+                            <i className="fas fa-ban"></i>
+                            <i className="fas fa-pen"></i>
+                        </td>
                     </tr>
                 </table>
                 <div className="table-footer">

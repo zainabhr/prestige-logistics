@@ -37,7 +37,9 @@ function Restaurants(){
     }
 
     const toggleResetPasswordModel = () =>{
-        setPasswordShowModel(!showPasswordModel)
+        setPasswordShowModel(!showPasswordModel)  
+        window.scrollTo({top: '-95px' , behavior: 'smooth'})
+
     }
 
     // const handleAddingRestaurant = (event) =>{
@@ -159,7 +161,7 @@ function Restaurants(){
                     <h2 className="section-title">إدارة المطاعم </h2>
                     <p className="section-topic">نظرة عامة و التحكم في شركات الطعام والخدمات اللوجستية</p>
                 </div>
-                <div>
+                <div className='section-title-btns'>
                     <button
                     onClick={toggleResetPasswordModel}
                     className="password-reset">
