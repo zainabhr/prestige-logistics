@@ -2162,6 +2162,25 @@ input::placeholder{
 
 }
 
+  /* ======================================= MEDIA QUERES 
+    LOGIN PAGE======================================= */
+  .login{
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .login .left-side{
+    display: none;
+  }
+
+  .login .right-side{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
 
 }
 
